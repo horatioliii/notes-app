@@ -30,26 +30,26 @@ let addNote = (title, body) => {
 
 let getAll = () => {
     return fetchNotes();
-}
+};
 
 let getNote = (title) => {
     let notes = fetchNotes();
     let note = notes.filter((note) => note.title === title);
     return note[0];
-}
+};
 
 let removeNote = (title) => {
     let notes = fetchNotes();
     let filteredNotes = notes.filter((note) => note.title !== title);
     saveNotes(filteredNotes);
     return notes.length !== filteredNotes.length;
-}
+};
 
 let logNote = (note) => {
     console.log('-----------');
     console.log(`Title: ${note.title}`);
     console.log(`Body: ${note.body}`);
-}
+};
 
 module.exports = {
     addNote,
